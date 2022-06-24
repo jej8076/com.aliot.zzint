@@ -32,6 +32,15 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+val explodedWar by tasks.register<Copy>("explodedWar") {
+    into("$buildDir/libs/exploded")
+    with(tasks.war.get())
+}
+
+tasks.war {
+    finalizedBy(explodedWar)
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
