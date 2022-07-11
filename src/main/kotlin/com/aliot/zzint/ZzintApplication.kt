@@ -2,17 +2,11 @@ package com.aliot.zzint
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.context.annotation.Configuration
 
+@Configuration
 @SpringBootApplication
-class ZzintApplication{
-    @Value("${my-app.welcome-message}")
-    val myAppWelcomeMessage: String = ""
-
-    @PostConstruct
-    fun printMyAppWelcomeMessage() {
-        println(myAppWelcomeMessage)
-    }
-}
+class ZzintApplication
 
 fun main(args: Array<String>) {
     runApplication<ZzintApplication>(*args)
