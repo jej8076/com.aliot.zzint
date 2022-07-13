@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: 'MICEGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'MICEGothic';
+    background-image: linear-gradient(90deg, #368aa7, #5e62b0, #b83771);
+}
+
+.mainouter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-control {
+    width: 500px;
+    background-color: transparent;
+}
+
+.btn.btn-light {
+    margin: 10px;
+}
