@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
 
         <!-- jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
         <!-- bootstrap -->
         <link rel="stylesheet" href="/css/common/bootstrap/bootstrap.css">

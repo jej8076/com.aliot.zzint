@@ -35,3 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
+.tmp/
+caches/
+daemon/
+kotlin-profile/
+native/
+wrapper/

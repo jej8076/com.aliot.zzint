@@ -1,20 +1,16 @@
-$(document).ready(function(){
-	$('#orgContent').css('height', 700);
-    $('#becameContent').css('height', 700);
-});
+let convertData = {};
 
 function convert(){
+    let orgContent = $('#orgContent').val();
+    convertData.orgContent = orgContent;
     $.ajax({
         url : "/app/convert"
         , type : 'GET'
         , contentType : 'application/json'
-        , dataType : 'json'
         , async : false
-        , data : {
-            content : 'ttteeesssttt'
-        }
+        , data : convertData
         , success : function (data) {
-            alert(data);
+            console.log('responseData :::: ' + data)
         }
         , error : function (error) {
             console.log(error);
@@ -24,3 +20,23 @@ function convert(){
         }
     });
 }
+
+function frontAddBtn(){
+    $('#modalTitle').text('Enter the character to add before the line');
+    let bodyHtml = '<input type="text" class="form-control" id="modalBodyInput">'
+    $('#modalBody').append(bodyHtml)
+    $('#modalBodyInput').css('width', '435px');
+    $('#editorModal').modal('show');
+}
+
+function saveChanges(){
+    let frontAddText = $('#modalBodyInput').val();
+    $('#frontAdd').val(frontAddText);
+    $('#editorModal').modal('hide');
+    convertData.frontAdd = frontAddText;
+}
+
+$(document).ready(function(){
+    $('#orgContent').css('height', 700);
+    $('#becameContent').css('height', 700);
+});
