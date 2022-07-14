@@ -26,7 +26,8 @@
             <div class="form-group">
                 <label for="orgContent" class="form-label mt-4">original content</label>
                 <br>
-                <button type="button" class="btn btn-outline-primary" onclick="frontAddBtn()">before the line</button>
+                <button type="button" class="btn btn-outline-primary select" onclick="functionAddBtn('addFront', 'primary')"><span>addFront</span></button>
+                <button type="button" class="btn btn-outline-secondary select" onclick="functionAddBtn('addBack', 'secondary')">addBack</button>
                 <textarea class="form-control" id="orgContent"></textarea>
             </div>
             <button type="button" class="btn btn-light" onclick="convert()">convert</button>
@@ -39,22 +40,7 @@
 
     <!-- modal fade -->
     <div class="modal fade" id="editorModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="modal-body" id="modalBody">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="saveChanges()">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
+
     </div>
     <!-- /modal fade -->
 </html>

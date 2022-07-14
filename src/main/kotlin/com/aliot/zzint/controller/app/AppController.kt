@@ -1,6 +1,6 @@
 package com.aliot.zzint.controller.app
 
-import com.aliot.zzint.dto.ConvertDto
+import com.aliot.zzint.dto.Convert
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.http.ResponseEntity
@@ -21,5 +21,5 @@ class AppController {
     }
 
     @RequestMapping("/convert")
-    fun convert(convert: ConvertDto) = ResponseEntity.ok().body(appService.converContent(convert))
+    fun convert(convert: Convert) = ResponseEntity.ok().body(appService.convertContent(convert))
 }

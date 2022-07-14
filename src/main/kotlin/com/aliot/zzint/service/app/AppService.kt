@@ -1,26 +1,33 @@
 package com.aliot.zzint.service.app
 
-import com.aliot.zzint.dto.ConvertDto
+import com.aliot.zzint.dto.Convert
 import org.springframework.stereotype.Service
 
 @Service
 class AppService {
 
-    val lineSeparator: String = System.getProperty("line.separator")
+    fun convertContent(convert: Convert): String {
+        var contentBuilder = StringBuilder(convert.orgContent)
 
-    fun converContent(convert: ConvertDto): String {
-        val contentBuilder = StringBuilder(convert.orgContent)
-
-        // convert 로직
-        if(convert.frontAdd.isNotBlank()){
-            val regex = lineSeparator.toRegex()
-            contentBuilder.replace(regex, lineSeparator + convert.frontAdd)
+        // addFront
+        if(convert.addFront?.isNotBlank() == true){
+            contentBuilder.insert(0, convert.addFront)
+            contentBuilder = contentBuilder.replace("\n", "\n" + convert.addFront)
         }
+
+        // addBack
+        if(convert.addBack?.isNotBlank() == true){
+            contentBuilder.insert(contentBuilder.length, convert.addBack)
+            contentBuilder = contentBuilder.replace("\n", convert.addBack + "\n")
+        }
+
         return contentBuilder.toString()
+    }
+
+    private fun StringBuilder.replace(pattern: String, value: String): StringBuilder {
+        return StringBuilder(this.toString().replace(pattern, value))
     }
 }
 
-private fun StringBuilder.replace(regex: String, s: String): StringBuilder {
-    this.toString().replace(regex, s)
-    return StringBuilder(toString().replace(regex, s))
-}
+
+
