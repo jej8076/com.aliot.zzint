@@ -88,4 +88,5 @@ $(document).ready(function(){
     $('#orgContent').css('height', 700);
     $('#becameContent').css('height', 700);
 
+    TextareaLine.appendLineNumber('orgContent');
 });

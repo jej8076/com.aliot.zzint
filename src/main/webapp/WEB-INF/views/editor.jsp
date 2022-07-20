@@ -12,6 +12,10 @@
         <link rel="stylesheet" href="/css/common/bootstrap/bootstrap.css">
         <script type="text/javascript" src="/js/common/bootstrap/bootstrap.js"></script>
 
+        <!-- textarea show line -->
+        <link rel="stylesheet" href="/css/common/textarealine.css" type="text/css" media="all">
+        <script type="text/javascript" src="/js/common/textarealine.js"></script>
+
         <!-- custom - css -->
         <link rel="stylesheet" href="/css/main/editor.css">
         
@@ -24,16 +28,25 @@
     <body>
         <div class="mainouter">
             <div class="form-group">
+                <div style="margin-top: 140px"></div>
+
+            </div>
+            <div class="form-group">
                 <label for="orgContent" class="form-label mt-4">original content</label>
                 <br>
                 <button type="button" class="btn btn-outline-primary select" onclick="functionAddBtn('addFront', 'primary')"><span>addFront</span></button>
                 <button type="button" class="btn btn-outline-secondary select" onclick="functionAddBtn('addBack', 'secondary')">addBack</button>
-                <textarea class="form-control" id="orgContent"></textarea>
+                <div class="ejtest">
+                    <textarea class="form-control" id="orgContent"></textarea>
+                </div>
             </div>
             <button type="button" class="btn btn-light" onclick="convert()">convert</button>
             <div class="form-group">
                 <label for="becameContent" class="form-label mt-4">became content</label>
-                <textarea class="form-control" id="becameContent"></textarea>
+                <div style="margin:50px;"></div>
+                <div class="ejtest">
+                    <textarea class="form-control" id="becameContent"></textarea>
+                </div>
             </div>
         </div>
     </body>
