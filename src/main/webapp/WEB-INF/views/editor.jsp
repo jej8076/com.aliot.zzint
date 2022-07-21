@@ -34,8 +34,9 @@
             <div class="form-group">
                 <label for="orgContent" class="form-label mt-4">original content</label>
                 <br>
-                <button type="button" class="btn btn-outline-primary select" onclick="functionAddBtn('addFront', 'primary')"><span>addFront</span></button>
-                <button type="button" class="btn btn-outline-secondary select" onclick="functionAddBtn('addBack', 'secondary')">addBack</button>
+                <button type="button" class="btn btn-outline-primary select" onclick="modalForAdd('addFront', 'primary')"><span>addFront</span></button>
+                <button type="button" class="btn btn-outline-secondary select" onclick="modalForAdd('addBack', 'secondary')">addBack</button>
+                <button type="button" class="btn btn-outline-success select" onclick="toggle('addLine', 'success')">addLine</button>
                 <div class="contentWrapper">
                     <textarea class="form-control" id="orgContent"></textarea>
                 </div>

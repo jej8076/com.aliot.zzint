@@ -21,6 +21,11 @@ class AppService {
             contentBuilder = contentBuilder.replace("\n", convert.addBack + "\n")
         }
 
+        // addLine
+        if(convert.addLine){
+            contentBuilder = contentBuilder.replace("\n",  "\n\n")
+        }
+
         return contentBuilder.toString()
     }
 

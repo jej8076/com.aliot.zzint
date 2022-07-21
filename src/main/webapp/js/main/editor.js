@@ -20,7 +20,7 @@ function convert(){
     });
 }
 
-function functionAddBtn(type, btnClass){
+function modalForAdd(type, btnClass){
     if(!isEmpty(convertData[type]) && convertData[type].length > 0){
         $('.btn.btn-primary.select').prop('class', 'btn btn-outline-' + btnClass + ' select');
         $('#modalBodyInput').val('');
@@ -46,6 +46,18 @@ function functionAddBtn(type, btnClass){
             }
         });
     }
+}
+
+function toggle(type, btnClass){
+    if(!isEmpty(convertData[type]) && convertData[type]){
+        convertData[type] = false;
+        $('.btn.btn-' + btnClass + '.select').prop('class', 'btn btn-outline-' + btnClass + ' select');
+    }else{
+        convertData[type] = true;
+        $('.btn.btn-outline-' + btnClass + '.select').prop('class', 'btn btn-' + btnClass + ' select');
+    }
+
+    console.log(convertData[type]);
 }
 
 function saveChanges(type, btnClass){
