@@ -15,10 +15,10 @@
     height:100%;
     font-size:1em;
     line-height:1.5;
-    font-family:"Roboto Mono",monospace;
+    font-weight: 400;
+    font-style: normal;
     word-break:break-all;
     border:1px solid #aeaeae;
-    background-color:#fff;
     resize:none;
     overflow-wrap:normal;
     overflow-x:auto;
@@ -38,12 +38,12 @@
     display:block;
     text-align:center;
     line-height:1.5;
-    font-size:1em;
-    color:#aeaeae
+    color:darkgray;
+    font-weight: 400;
+    font-style: normal;
 }
 .textarea-line::before{
     counter-increment:line;
     content:counter(line);
-    font-size:1em;
     user-select:none
 }

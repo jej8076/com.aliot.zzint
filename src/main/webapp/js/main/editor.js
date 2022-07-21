@@ -60,7 +60,7 @@ function closeModal(){
     $('#modalBodyInput').off('keyup');
     $('#editorModal').modal('hide');
     // modal fade 애니메이션이 끝나기 전에 empty 되는 것을 방지
-    setTimeout(() => $('#editorModal').empty(), 1000);
+    setTimeout(() => $('#editorModal').empty(), 500);
 }
 
 function modalForm(type, btnClass){

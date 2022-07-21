@@ -36,15 +36,15 @@
                 <br>
                 <button type="button" class="btn btn-outline-primary select" onclick="functionAddBtn('addFront', 'primary')"><span>addFront</span></button>
                 <button type="button" class="btn btn-outline-secondary select" onclick="functionAddBtn('addBack', 'secondary')">addBack</button>
-                <div class="ejtest">
+                <div class="contentWrapper">
                     <textarea class="form-control" id="orgContent"></textarea>
                 </div>
             </div>
             <button type="button" class="btn btn-light" onclick="convert()">convert</button>
             <div class="form-group">
                 <label for="becameContent" class="form-label mt-4">became content</label>
-                <div style="margin:50px;"></div>
-                <div class="ejtest">
+                <div style="margin:63px;"></div>
+                <div class="contentWrapper">
                     <textarea class="form-control" id="becameContent"></textarea>
                 </div>
             </div>

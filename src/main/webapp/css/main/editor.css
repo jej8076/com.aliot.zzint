@@ -29,13 +29,10 @@ body {
 
 }
 
-.ejtest {
-    background-color: black;
-    color: white;
-    border: 1px solid black;
+.contentWrapper {
     position: relative;
-    height: 500px;
-    width: 500px;
+    height: 700px;
+    width: 700px;
     margin: 15px auto
 }
 
