@@ -21,4 +21,7 @@ spring:
   devtools:
     livereload:
       enabled: true
+  messages:
+    basename: messages
+    encoding: utf-8
 

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,7 +33,7 @@
 
             </div>
             <div class="form-group">
-                <label for="orgContent" class="form-label mt-4">original content</label>
+                <label for="orgContent" class="form-label mt-4"><spring:message code="helloworld"/></label>
                 <br>
                 <button type="button" class="btn btn-outline-primary select" onclick="modalForAdd('addFront', 'primary')"><span>addFront</span></button>
                 <button type="button" class="btn btn-outline-secondary select" onclick="modalForAdd('addBack', 'secondary')">addBack</button>

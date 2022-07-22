@@ -22,7 +22,7 @@ function convert(){
 
 function modalForAdd(type, btnClass){
     if(!isEmpty(convertData[type]) && convertData[type].length > 0){
-        $('.btn.btn-primary.select').prop('class', 'btn btn-outline-' + btnClass + ' select');
+        $('.btn.btn-' + btnClass + '.select').prop('class', 'btn btn-outline-' + btnClass + ' select');
         $('#modalBodyInput').val('');
         delete convertData[type];
     }else{
