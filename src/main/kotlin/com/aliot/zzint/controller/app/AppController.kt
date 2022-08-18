@@ -1,5 +1,6 @@
 package com.aliot.zzint.controller.app
 
+import com.aliot.zzint.common.CommonUtils
 import com.aliot.zzint.dto.Convert
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestMapping
@@ -12,11 +13,12 @@ import com.aliot.zzint.service.app.AppService
 @RequestMapping("/app")
 class AppController {
 
-    @Autowired
-    private lateinit var appService: AppService
+    @Autowired private lateinit var appService: AppService
+    @Autowired private lateinit var commonUtils: CommonUtils
 
     @RequestMapping("/editor")
-    fun editorPage(m: Model): String{
+    fun editorPage(m: Model, locale: String?): String{
+        if (locale != null) commonUtils.setLocale(locale)
         return "editor"
     }
 

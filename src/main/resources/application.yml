@@ -11,17 +11,17 @@ server:
 
 
 spring:
+  config:
+    activate:
+      on-profile: dev
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
-  config:
-    activate:
-      on-profile: dev
   devtools:
     livereload:
       enabled: true
   messages:
     basename: messages
     encoding: utf-8
-
+    cache-duration: 3
