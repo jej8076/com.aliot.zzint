@@ -22,6 +22,6 @@ spring:
     livereload:
       enabled: true
   messages:
-    basename: messages
+    basename: classpath:/messages
     encoding: utf-8
     cache-duration: 3

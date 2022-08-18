@@ -33,18 +33,18 @@
 
             </div>
             <div class="form-group">
-                <label for="orgContent" class="form-label mt-4"><spring:message code="original_text"/></label>
+                <label for="orgContent" class="form-label mt-4">${globalMessage.original_text}</label>
                 <br>
-                <button type="button" class="btn btn-outline-primary select" onclick="modalForAdd('addFront', 'primary')"><span><spring:message code="add_front"/></span></button>
-                <button type="button" class="btn btn-outline-secondary select" onclick="modalForAdd('addBack', 'secondary')"><span><spring:message code="add_back"/></span></button>
-                <button type="button" class="btn btn-outline-success select" onclick="toggle('addLine', 'success')"><spring:message code="add_line"/></button>
+                <button type="button" class="btn btn-outline-primary select" onclick="modalForAdd('addFront', 'primary')"><span>${globalMessage.add_front}</span></button>
+                <button type="button" class="btn btn-outline-secondary select" onclick="modalForAdd('addBack', 'secondary')"><span>${globalMessage.add_back}</span></button>
+                <button type="button" class="btn btn-outline-success select" onclick="toggle('addLine', 'success')">${globalMessage.add_line}</button>
                 <div class="contentWrapper">
                     <textarea class="form-control" id="orgContent"></textarea>
                 </div>
             </div>
-            <button type="button" class="btn btn-light" onclick="convert()"><spring:message code="convert"/></button>
+            <button type="button" class="btn btn-light" onclick="convert()">${globalMessage.convert}</button>
             <div class="form-group">
-                <label for="becameContent" class="form-label mt-4"><spring:message code="changed_text"/></label>
+                <label for="becameContent" class="form-label mt-4">${globalMessage.changed_text}</label>
                 <div style="margin:63px;"></div>
                 <div class="contentWrapper">
                     <textarea class="form-control" id="becameContent"></textarea>

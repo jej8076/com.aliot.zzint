@@ -27,8 +27,8 @@ function modalForAdd(type, btnClass){
         delete convertData[type];
     }else{
         $('#editorModal').html(modalForm(type, btnClass));
-
-        $('#modalTitle').text('Enter the character to add before the line');
+        let testeee = "${globalMessage.add_before_line}";
+        $('#modalTitle').text(testeee);
         if($('#modalBodyInput').length <= 0) {
             let bodyHtml = '<input type="text" class="form-control" id="modalBodyInput">'
             $('#modalBody').html(bodyHtml)
