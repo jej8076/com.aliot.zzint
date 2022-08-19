@@ -20,10 +20,6 @@
         <!-- custom - css -->
         <link rel="stylesheet" href="/css/main/editor.css">
         
-        <!-- custom - js -->
-        <script defer type="text/javascript" src="/js/common/common.js"></script>
-        <script defer type="text/javascript" src="/js/main/editor.js"></script>
-
         <title>zzint</title>
     </head>
     <body>
@@ -58,4 +54,12 @@
 
     </div>
     <!-- /modal fade -->
+
+    <!-- custom - js -->
+    <script type="text/javascript" src="/js/common/common.js"></script>
+    <script type="text/javascript" src="/js/main/editor.js"></script>
+    <script>
+        const globalMessage = '${globalMessage}';
+        const globalMessageJson = DataMapStringToJson(globalMessage);
+    </script>
 </html>

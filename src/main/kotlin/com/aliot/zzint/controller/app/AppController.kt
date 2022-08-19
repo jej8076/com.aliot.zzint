@@ -9,9 +9,9 @@ import org.springframework.http.ResponseEntity
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import com.aliot.zzint.service.app.AppService
+import com.fasterxml.jackson.databind.util.JSONPObject
 import org.springframework.ui.set
 import java.util.*
-import kotlin.collections.HashMap
 
 @Controller
 @RequestMapping("/app")
@@ -24,7 +24,6 @@ class AppController {
     @RequestMapping("/editor")
     fun editorPage(m: Model, currLocale: String?): String{
         if (currLocale != null) commonUtils.setLocale(currLocale)
-        var messagesMap = HashMap<String, Any>()
         val locale = Locale(Locale.getDefault().toString(),"","")
         val allMessages: Properties = extMessageSource.getMessages(locale)
         m["globalMessage"] = allMessages

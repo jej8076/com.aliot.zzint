@@ -26,6 +26,7 @@ dependencies {
     implementation("org.apache.tomcat.embed:tomcat-embed-jasper")
     implementation("javax.servlet:jstl")
     implementation("org.springframework.boot:spring-boot-devtools")
+    implementation("org.json:json:20220320")
 }
 
 tasks.withType<KotlinCompile> {

@@ -27,8 +27,7 @@ function modalForAdd(type, btnClass){
         delete convertData[type];
     }else{
         $('#editorModal').html(modalForm(type, btnClass));
-        let testeee = "${globalMessage.add_before_line}";
-        $('#modalTitle').text(testeee);
+        $('#modalTitle').text(globalMessageJson.add_before_line);
         if($('#modalBodyInput').length <= 0) {
             let bodyHtml = '<input type="text" class="form-control" id="modalBodyInput">'
             $('#modalBody').html(bodyHtml)
