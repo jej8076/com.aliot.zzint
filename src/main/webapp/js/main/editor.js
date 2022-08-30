@@ -20,14 +20,20 @@ function convert(){
     });
 }
 
-function modalForAdd(type, btnClass){
+/**
+ * type에 따라 다르게 열리는 공통 popup window
+ * @param type
+ * @param btnClass
+ * @extra globalMessageJson : message.properties를 json형식으로 받아온 변수
+ */
+function popupModal(type, btnClass){
     if(!isEmpty(convertData[type]) && convertData[type].length > 0){
         $('.btn.btn-' + btnClass + '.select').prop('class', 'btn btn-outline-' + btnClass + ' select');
         $('#modalBodyInput').val('');
         delete convertData[type];
     }else{
         $('#editorModal').html(modalForm(type, btnClass));
-        $('#modalTitle').text(globalMessageJson.add_before_line);
+        $('#modalTitle').text(globalMessageJson[type + "Message"]);
         if($('#modalBodyInput').length <= 0) {
             let bodyHtml = '<input type="text" class="form-control" id="modalBodyInput">'
             $('#modalBody').html(bodyHtml)

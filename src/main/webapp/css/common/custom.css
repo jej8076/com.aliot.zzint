@@ -1,0 +1,11 @@
+.btn {
+    width: auto;
+    height: 40px;
+    padding: 0.3rem 0.5rem;
+    white-space : nowrap;
+    overflow : hidden;
+}
+
+.btn span{
+    font-size: small;
+}

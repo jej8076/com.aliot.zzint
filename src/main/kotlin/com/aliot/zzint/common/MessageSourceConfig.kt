@@ -9,14 +9,14 @@ import org.springframework.util.StringUtils
 import java.time.Duration
 
 @Configuration
-open class MessageSourceConfig {
+class MessageSourceConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.messages")
-    open fun properties(): MessageSourceProperties = MessageSourceProperties()
+    fun properties(): MessageSourceProperties = MessageSourceProperties()
 
     @Bean
-    open fun messageSource(properties: MessageSourceProperties): MessageSource{
+    fun messageSource(properties: MessageSourceProperties): MessageSource{
         val messageSource = ExtendReloadableResourceBundleMessageSource()
 
         if(StringUtils.hasText(properties.basename)){
