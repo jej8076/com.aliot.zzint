@@ -72,7 +72,7 @@ function toggle(type, btnClass){
 }
 
 function saveChanges(type, btnClass){
-    if($('#modalBodyInput1').length > -1 || $('#modalBodyInput2').length > -1){
+    if($('#modalBodyInput1').length > 0 || $('#modalBodyInput2').length > 0){
         convertData[type] = [$('#modalBodyInput1').val(), $('#modalBodyInput2').val()].join(',');
     }else{
         convertData[type] = $('#modalBodyInput').val();
