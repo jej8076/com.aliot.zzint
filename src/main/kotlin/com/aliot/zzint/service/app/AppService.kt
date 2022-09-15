@@ -26,6 +26,30 @@ class AppService {
             contentBuilder = contentBuilder.replace("\n",  "\n\n")
         }
 
+        /**
+         * extract(추출)
+         * convert.extract[0] : 몇번 째 문자열을 추출할 것인지
+         * convert.extract[1] : 무슨 문자열을 기준으로 할 것인지
+         */
+        if(convert.extract?.isNotEmpty() == true){
+            val extract = convert.extract.split(",")
+            val pickNum = Integer.parseInt(extract[0]) - 1
+            val standardChar = extract[1]
+            val newContent = StringBuilder()
+            for(line: String in contentBuilder.toString().split("\n")){
+                val unit = line.split(standardChar)
+                var picked = ""
+                if(pickNum < unit.size){
+                    picked = unit[pickNum]
+                }
+
+                newContent.append(picked + "\n")
+            }
+
+            contentBuilder.clear()
+            contentBuilder = newContent
+        }
+
         return contentBuilder.toString()
     }
 

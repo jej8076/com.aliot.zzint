@@ -69,12 +69,14 @@ function toggle(type, btnClass){
         convertData[type] = true;
         $('.btn.btn-outline-' + btnClass + '.select').prop('class', 'btn btn-' + btnClass + ' select');
     }
-
-    console.log(convertData[type]);
 }
 
 function saveChanges(type, btnClass){
-    convertData[type] = $('#modalBodyInput').val();
+    if($('#modalBodyInput1').length > -1 || $('#modalBodyInput2').length > -1){
+        convertData[type] = [$('#modalBodyInput1').val(), $('#modalBodyInput2').val()].join(',');
+    }else{
+        convertData[type] = $('#modalBodyInput').val();
+    }
     closeModal();
     if(!isEmpty(convertData[type]) && convertData[type].length > 0){
         $('.btn.btn-outline-' + btnClass + '.select').prop('class', 'btn btn-' + btnClass + ' select');
@@ -123,4 +125,12 @@ $(document).ready(function(){
     $('#becameContent').css('height', 700);
 
     TextareaLine.appendLineNumber('orgContent');
+
+    $('#orgContent').on("propertychange change keyup paste input", function() {
+        if($('.textarea-line').length > 5000){
+            alert('5000줄을 넘을 수 없습니다.');
+            $('#orgContent').val('');
+            $('.textarea-wrapper').html('<span class="textarea-line"></span>');
+        }
+    })
 });

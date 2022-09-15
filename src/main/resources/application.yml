@@ -8,6 +8,7 @@ server:
       force: true
   tomcat:
     uri-encoding: UTF-8
+  max-http-header-size: 10000000
 
 
 spring:
