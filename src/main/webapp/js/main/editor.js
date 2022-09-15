@@ -35,10 +35,18 @@ function popupModal(type, btnClass){
         $('#editorModal').html(modalForm(type, btnClass));
         $('#modalTitle').text(globalMessageJson[type + "Message"]);
         if($('#modalBodyInput').length <= 0) {
-            let bodyHtml = '<input type="text" class="form-control" id="modalBodyInput">'
-            $('#modalBody').html(bodyHtml)
-            $('#modalBodyInput').text(convertData[type]);
+            let bodyHtml;
+            if('extract' === type){
+                bodyHtml = globalLanguage === 'ko_KR' ? extractFormKo() : extractForm();
+            }else{
+                bodyHtml = normalTextForm();
+            }
+            $('#modalBody').html(bodyHtml);
             $('#modalBodyInput').css('width', '435px');
+            if($('#modalBodyInput1').length > -1 || $('#modalBodyInput2').length > -1){
+                $('#modalBodyInput1').css('width', '100px');
+                $('#modalBodyInput2').css('width', '100px');
+            }
         }
         $('#editorModal').modal('show');
 
@@ -100,6 +108,15 @@ function modalForm(type, btnClass){
     modal += '</div>';
     return modal;
 }
+
+const normalTextForm = () => '<input type="text" class="form-control" id="modalBodyInput" />';
+const extractFormKo = () =>
+    `<div><input type="text" class="form-control" id="modalBodyInput2" style="display: inline" /><span>${globalMessageJson["extractMessage2"]}</span>
+     <input type="text" class="form-control" id="modalBodyInput1" style="display: inline" /><span>${globalMessageJson["extractMessage1"]}</span></div>`
+
+const extractForm = () =>
+    `<div><span>${globalMessageJson["extractMessage1"]}</span> <input type="text" class="form-control" id="modalBodyInput1" style="display: inline" />
+    <span>${globalMessageJson["extractMessage2"]}</span> <input type="text" class="form-control" id="modalBodyInput2" style="display: inline" /></div>`
 
 $(document).ready(function(){
     $('#orgContent').css('height', 700);

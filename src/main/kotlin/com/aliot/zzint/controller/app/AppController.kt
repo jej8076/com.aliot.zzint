@@ -21,10 +21,12 @@ class AppController {
     @Autowired private lateinit var extMessageSource: ExtendReloadableResourceBundleMessageSource
 
     @RequestMapping("/editor")
-    fun editorPage(m: Model, locale: String?): String{
-        if (locale != null) commonUtils.setLocale(locale)
-        val globalLocale = Locale(Locale.getDefault().toString(),"","")
+    fun editorPage(m: Model, lang: String?): String{
+        if (lang != null) commonUtils.setLocale(lang)
+        val globalLanguage = Locale.getDefault().toString()
+        val globalLocale = Locale(globalLanguage,"","")
         m["globalMessage"] = extMessageSource.getGlobalMessage(globalLocale, "editor")
+        m["globalLanguage"] = globalLanguage
         return "editor"
     }
 
